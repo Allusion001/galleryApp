@@ -1,5 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import Category,Photo
+from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
 
 
 # Create your views here.
@@ -20,8 +22,10 @@ def gallery(request):
     context = {'categories' : categories,'photos':photo}
     return render(request,"photos/gallery.html",context)
 
-def remove(request):
-    photo= Photo.objects.delete(request.photo.id)
+def deletePhoto(request,pk):
+    photo= Photo.objects.get(id=pk)
+    photo.delete()
+    return HttpResponseRedirect(reverse('gallery'))
 
 def viewPhoto(request,pk):
     photo= Photo.objects.get(id=pk)
