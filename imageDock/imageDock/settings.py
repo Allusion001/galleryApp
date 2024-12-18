@@ -25,9 +25,7 @@ SECRET_KEY = "django-insecure-efs!$82@16*^!%d(i02_gv892(+$0kn5&tj!59df)3_+hjz0s_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '*','djnango-chat.onrender.com']
-
-CSRF_TRUSTED_ORIGINS = [ 'https://*','http://*' ,'https://djnango-chat.onrender.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
